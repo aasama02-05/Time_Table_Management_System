@@ -61,7 +61,49 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Brand pink colors
+				'brand-pink': {
+					50: 'hsl(var(--brand-pink-50))',
+					100: 'hsl(var(--brand-pink-100))',
+					200: 'hsl(var(--brand-pink-200))',
+					300: 'hsl(var(--brand-pink-300))',
+					400: 'hsl(var(--brand-pink-400))',
+					500: 'hsl(var(--brand-pink-500))',
+					600: 'hsl(var(--brand-pink-600))',
+					700: 'hsl(var(--brand-pink-700))',
+					800: 'hsl(var(--brand-pink-800))',
+					900: 'hsl(var(--brand-pink-900))'
+				},
+				// Status colors
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))'
+				},
+				info: {
+					DEFAULT: 'hsl(var(--info))',
+					foreground: 'hsl(var(--info-foreground))'
+				},
+				// Timetable specific colors
+				'timetable-slot': 'hsl(var(--timetable-slot))',
+				'timetable-slot-hover': 'hsl(var(--timetable-slot-hover))',
+				'timetable-slot-selected': 'hsl(var(--timetable-slot-selected))',
+				'timetable-conflict': 'hsl(var(--timetable-conflict))',
+				'timetable-conflict-border': 'hsl(var(--timetable-conflict-border))'
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)'
+			},
+			boxShadow: {
+				'soft': 'var(--shadow-soft)',
+				'medium': 'var(--shadow-medium)',
+				'large': 'var(--shadow-large)',
+				'pink': 'var(--shadow-pink)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

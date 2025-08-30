@@ -1,73 +1,169 @@
-# Welcome to your Lovable project
+# Time Tabling System
 
-## Project info
+A modern, production-ready Time Tabling System built with React, TypeScript, and TailwindCSS. Features role-based access, drag-and-drop timetable editing, conflict detection, and comprehensive course management.
 
-**URL**: https://lovable.dev/projects/3b0b4ac0-0f5c-4c70-a367-6636894a9acb
+## 🚀 Features
 
-## How can I edit this code?
+- **Role-Based Dashboard**: Admin, Teacher, Student, and Support Staff views
+- **Course Management**: CRUD operations for courses, subjects, and prerequisites  
+- **People Management**: Teachers, students, availability, and vacation tracking
+- **Interactive Timetable**: Drag-and-drop editing with real-time conflict detection
+- **Room & Resource Management**: Capacity, equipment, and utilization tracking
+- **Reports & Analytics**: Export timetables, change notifications
+- **Settings**: Institution configuration, holidays, exam periods
 
-There are several ways of editing your application.
+## 🎨 Design System
 
-**Use Lovable**
+- **Theme**: Clean white background with pink brand colors
+- **Typography**: Modern, accessible font system
+- **Components**: Custom shadcn/ui components with pink theme
+- **Responsive**: Mobile-first design with desktop optimization
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3b0b4ac0-0f5c-4c70-a367-6636894a9acb) and start prompting.
+## 🛠️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: React 18 + TypeScript + Vite
+- **Styling**: TailwindCSS + Custom design tokens
+- **UI Components**: shadcn/ui + Lucide icons
+- **Routing**: React Router v6
+- **State Management**: Zustand
+- **Data Fetching**: TanStack Query
+- **Testing**: Vitest + Testing Library
+- **Mock APIs**: MSW (Mock Service Worker)
 
-**Use your preferred IDE**
+## 🚦 Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
+- Node.js 18+ and npm
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Installation
 
-Follow these steps:
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd timetable-system
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Install dependencies
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Available Scripts
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run lint         # Run ESLint
+npm run test         # Run tests
+npm run test:ui      # Run tests with UI
+```
 
-**Use GitHub Codespaces**
+## 📁 Project Structure
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+src/
+├── app/                    # Route components
+│   ├── auth/
+│   ├── dashboard/
+│   ├── courses/
+│   ├── people/
+│   ├── timetable/
+│   ├── rooms/
+│   ├── reports/
+│   └── settings/
+├── components/             # Reusable UI components
+│   ├── common/            # General purpose components
+│   ├── data/              # Data display components
+│   ├── forms/             # Form components
+│   ├── timetable/         # Timetable specific components
+│   └── ui/                # shadcn/ui components
+├── features/              # Feature-specific logic
+├── state/                 # Zustand stores
+├── api/                   # API layer and MSW mocks
+├── types/                 # TypeScript definitions
+├── lib/                   # Utility functions
+└── styles/               # Global styles
+```
 
-## What technologies are used for this project?
+## 🎯 Key Components
 
-This project is built with:
+### Timetable Editor
+- **WeekGrid**: Interactive weekly calendar view
+- **SlotCard**: Draggable time slot components
+- **ConflictDetection**: Real-time validation and warnings
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Data Management
+- **DataTable**: Sortable, filterable tables with pagination
+- **FormDialog**: Modal forms for CRUD operations
+- **AvailabilityEditor**: Teacher schedule management
 
-## How can I deploy this project?
+### Role-Based Features
+- **AppShell**: Navigation with role-aware menus
+- **Dashboard**: Personalized views per user role
+- **Permissions**: Route and feature access control
 
-Simply open [Lovable](https://lovable.dev/projects/3b0b4ac0-0f5c-4c70-a367-6636894a9acb) and click on Share -> Publish.
+## 🔧 Configuration
 
-## Can I connect a custom domain to my Lovable project?
+### Environment Variables
+```bash
+# Development
+VITE_API_URL=http://localhost:3001
+VITE_MOCK_API=true
 
-Yes, you can!
+# Production
+VITE_API_URL=https://your-api-url.com
+VITE_MOCK_API=false
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Mock Data
+The application includes comprehensive mock data for all entities:
+- Users (Admin, Teachers, Students, Staff)
+- Courses and Subjects
+- Rooms and Equipment
+- Timetable schedules
+- Conflicts and validations
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🧪 Testing
+
+The project includes unit tests for:
+- Conflict detection algorithms
+- Data validation functions
+- Component rendering
+- User interactions
+
+```bash
+npm run test           # Run all tests
+npm run test:watch     # Watch mode
+npm run test:coverage  # Coverage report
+```
+
+## 🚀 Deployment
+
+1. Build the application:
+```bash
+npm run build
+```
+
+2. Deploy the `dist` folder to your hosting provider
+
+## 📝 API Integration
+
+Replace MSW mocks with real API endpoints by:
+1. Setting `VITE_MOCK_API=false`
+2. Configuring `VITE_API_URL`
+3. Implementing authentication tokens
+4. Updating API calls in `src/api/`
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests for new features
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License.
